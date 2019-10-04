@@ -4,18 +4,18 @@ import links from './content'
 import * as S from './styled'
 
 
-const MenuLinks = () => {
+const MenuLinks = () => (
     <S.MenuLinksWrapper>
         <S.MenuLinksList>
-        { links.map((link,i)=>{
+        { links.map((link,i) => (
             <S.MenuLinksItem key={i}>
                 <S.MenuLinksLink to={link.url}>
                     { link.label }
                 </S.MenuLinksLink>
             </S.MenuLinksItem>
-        })}
+        ))}
         </S.MenuLinksList>
     </S.MenuLinksWrapper>
-}
+)
 
 export default MenuLinks

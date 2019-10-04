@@ -10,10 +10,10 @@ export const MenuLinksList = styled.ul`
 
 export const MenuLinksItem = styled.li`
     padding:.5rem 0;
-
+    list-style:none;
     .active{
         color: #1fa1f2;
-}
+    }
 `
 export const MenuLinksLink = styled(Link)`
     color:#8899a6;
