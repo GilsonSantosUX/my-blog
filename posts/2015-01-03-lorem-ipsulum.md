@@ -3,7 +3,7 @@ date: 2015-01-05 01:44:00
 title: Lorem
 description: Testando o mardwon para post.
 category: Misc
-background: "#440088"
+color: "#440088"
 ---
 
 # Lorem ipsum

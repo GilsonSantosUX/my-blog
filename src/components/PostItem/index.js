@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from "gatsby"
 
 import * as S from "./styled"
 
@@ -13,21 +14,21 @@ const PostItem = ({
     title,
     description
 }) => (
-    <S.PostItemLink to={slug}>
-    <S.PostItemWrapper>
-      <S.PostItemTag bg={color}>{category}</S.PostItemTag>
-      <S.PostItemInfo>
-        <S.PostItemDate>{date} • {timeToRead} min de leitura</S.PostItemDate>
-        <S.PostItemTitle>
-          {title}
-        </S.PostItemTitle>
-        <S.PostItemDescription>
-          {description}
-        </S.PostItemDescription>
-      </S.PostItemInfo>
-    </S.PostItemWrapper>
-  </S.PostItemLink>
-)
+            <S.PostItemLink to={slug}>
+            <S.PostItemWrapper>
+            <S.PostItemTag bg={color}>{category}</S.PostItemTag>
+            <S.PostItemInfo>
+                <S.PostItemDate>{date} • {timeToRead} min de leitura</S.PostItemDate>
+                <S.PostItemTitle>
+                {title}
+                </S.PostItemTitle>
+                <S.PostItemDescription>
+                {description}
+                </S.PostItemDescription>
+            </S.PostItemInfo>
+            </S.PostItemWrapper>
+        </S.PostItemLink>
+    )
 
 PostItem.prototype = {
     slug: PropTypes.string.isRequired,
