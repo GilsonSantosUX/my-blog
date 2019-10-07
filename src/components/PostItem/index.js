@@ -15,7 +15,7 @@ const PostItem = ({
 }) => (
     <S.PostItemLink to={slug}>
     <S.PostItemWrapper>
-      <S.PostItemTag bg={color}>{category}}</S.PostItemTag>
+      <S.PostItemTag bg={color}>{category}</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>{date} • {timeToRead} min de leitura</S.PostItemDate>
         <S.PostItemTitle>
