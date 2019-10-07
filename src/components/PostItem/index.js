@@ -6,7 +6,7 @@ import * as S from "./styled"
 const PostItem = () => (
     <S.PostItemLink to="/slug/">
     <S.PostItemWrapper>
-      <S.PostItemTag background="#47650b">Misc</S.PostItemTag>
+      <S.PostItemTag bg="#47650b">Misc</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>30 de Julho de 2019 • 4 min de leitura</S.PostItemDate>
         <S.PostItemTitle>
