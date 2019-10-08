@@ -1,9 +1,9 @@
 ---
-date: 2015-02-05 01:44:00
-title: Lorem
-description: Testando o mardwon para post.
+date: 2015-01-12 05:54:23
+title: Teste de post 02
+description: And I'm not sure about the universe.
 category: Misc
-color: "#440088"
+color: "#7AAB13"
 ---
 
 # Lorem ipsum
