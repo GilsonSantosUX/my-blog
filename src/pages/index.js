@@ -10,10 +10,12 @@ const IndexPage = () => {
     const { allMarkdownRemark } = useStaticQuery(
         graphql`
         query PostItem {
-            allMarkdownRemark {
+            allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
                 edges {
                 node {
-                    id
+                    fields {
+                        slug
+                    }
                     frontmatter {
                     title
                     date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
@@ -33,11 +35,12 @@ const IndexPage = () => {
         <SEO title="Home" />
         {postList.map((
             {node: {
+                fields: { slug },
                 frontmatter: { title, date, description, category, color},
                 timeToRead
             }}) => (
                  <PostItem
-                    slug="/slug"
+                    slug={slug}
                     color={color}
                     title={title}
                     category={category}
