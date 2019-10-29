@@ -27,27 +27,43 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     query PostItem {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC},) {
+        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
             edges {
-            node {
-                fields {
-                slug
+                node {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                        date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
+                        description
+                        category
+                        color
+                    }
+                    timeToRead
                 }
-                frontmatter {
-                title
-                date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
-                description
-                category
-                color
+                next {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                    }
                 }
-                timeToRead
-            }
+                previous {
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        title
+                    }
+                }
             }
         }
     }
   `).then(result => {
     const posts = result.data.allMarkdownRemark.edges
-    posts.forEach(({ node }) => {
+    posts.forEach(({ node, next , previous }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/blog-post.js`),
@@ -55,6 +71,8 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           slug: node.fields.slug,
+          previousPost: next,
+          nextPosts: previous
         },
       })
     })
