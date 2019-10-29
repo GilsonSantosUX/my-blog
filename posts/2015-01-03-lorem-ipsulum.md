@@ -13,6 +13,37 @@ Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus ege
 ![Desert_Image](/assets/img/desert.jpg)
 
 
+```jsx
+
+import React from "react"
+import PropTypes from "prop-types"
+import Profile from '../Profile'
+import { useStaticQuery, graphql } from "gatsby"
+import GlobalStyle  from '../../styles/global.js'
+import * as S from './styled'
+import Sidebar from "../Sidebar"
+import MenuBar from "../MenuBar"
+
+const Layout = ({ children }) => {
+  return (
+    <S.LayoutWarpper>
+      <GlobalStyle />
+      <Sidebar />
+      <S.LayoutMain>{children}</S.LayoutMain>
+      <MenuBar/>
+    </S.LayoutWarpper>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout
+
+```
+
+
 ## Fusce a metus eu
 
 Pellentesque `sed` sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum.
