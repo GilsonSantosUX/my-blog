@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import { Home } from "styled-icons/boxicons-solid/Home"
 import { SearchAlt2 as Search } from "styled-icons/boxicons-regular/SearchAlt2"
@@ -13,9 +13,9 @@ const MenuBar = () => {
 
     const isDarkMode = theme === "dark"
 
-    useEffect(()=>{
-        setTheme(window.__theme)
-        window._onThemeChange = () => setTheme(window.__theme)    
+    useEffect(() => {
+    setTheme(window.__theme)
+        window.__onThemeChange = () => setTheme(window.__theme)
     }, [])
 
     return (
@@ -34,7 +34,7 @@ const MenuBar = () => {
         </S.MenuBarGroup>
         <S.MenuBarGroup>
             <S.MenuBarItem title="Mudar o tema" onClick={()=> {
-                window.__setPreferredTheme(isDarkMode ? '' : 'dark')
+                window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
             }}>
                 <Light />
             </S.MenuBarItem>
