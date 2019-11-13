@@ -6,7 +6,7 @@ export const LayoutWarpper = styled.section `
 `
 
 export const LayoutMain = styled.main `
-  background:#16202c;
+  background:var(--background);
   width:100%;
   min-height:100vh;
   padding:0 3.75rem 0 24rem;
